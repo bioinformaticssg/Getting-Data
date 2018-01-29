@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#$ -N sra_sequence_dl      # name of the job
-#$ -o /data/users/$USER/BioinformaticsSG/Getting-Data    # contains what would normally be printed to stdout (the terminal). The file sra11.out go the location indicated by the path.
-#$ -e /data/users/$USER/BioinformaticsSG/Getting-Data   # file name to print standard error messages to. These messages would normally be printed to the the terminal. The file sra11.err wil go the location indicated by the path.
+#$ -N sra_seq_test_01      # name of the job
+#$ -o /data/users/$USER/BioinformaticsSG/Getting-Data/sra_seq_test_01.out    # contains what would normally be printed to stdout (the terminal). The file sra11.out go the location indicated by the path.
+#$ -e /data/users/$USER/BioinformaticsSG/Getting-Data/sra_seq_test_01.err   # file name to print standard error messages to. These messages would normally be printed to the the terminal. The file sra11.err wil go the location indicated by the path.
 #$ -q free64,som,asom       # request cores from the free64, som, asom queues.
 #$ -pe openmp 8-64          # request parallel environment. You can include a minimum and maximum core count.
 #$ -m beas                  # send you email of job status (b)egin, (e)rror, (a)bort, (s)uspend
@@ -24,5 +24,4 @@ nstop="3744667"
 
 for ID in `seq ${nstart} ${nstop}`; do 
 	echo $USER is downloading SRR${ID}
-	#fastq-dump SRR$ID
 done
