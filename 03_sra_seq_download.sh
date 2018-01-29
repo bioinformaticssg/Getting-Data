@@ -30,5 +30,5 @@ nstop_seq=$2
 
 for ID in `seq ${nstart_seq} ${nstop_seq}`; do 
 	echo $USER is downloading SRR${ID}
-	fastq-dump X -5 SRR$ID
+	fastq-dump -X 5 SRR$ID
 done
