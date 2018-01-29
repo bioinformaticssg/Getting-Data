@@ -11,7 +11,7 @@
 module load blcr
 module load SRAToolKit
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 1 ]; then
     echo "usage: nstart_seq nstop_seq"
     exit 1
 fi
@@ -27,4 +27,4 @@ cd ${DATA}
 
 BIO=$1
 
-esearch -db sra -query $1
+esearch -db sra -query $1 2>> ${DATA}/query.txt
