@@ -26,11 +26,5 @@ mkdir ${DATA}
 cd ${DATA}
 
 BIO=$1
-nstart_seq=$2
-nstop_seq=$3
-
 
 esearch -db sra -query $1
-for ID in `seq ${nstart_seq} ${nstop_seq}`; do
-        echo $USER is downloading SRR${ID}
-done
