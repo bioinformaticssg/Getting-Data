@@ -19,9 +19,9 @@ mkdir ${DATA}
 # Here we are changing our current directory to the new file
 cd ${DATA}
 
-nstart="3744659"
-nstop="3744667"
+nstart_seq="3744659"
+nstop_seq="3744667"
 
-for ID in `seq ${nstart} ${nstop}`; do 
+for ID in `seq ${nstart_seq} ${nstop_seq}`; do 
 	echo $USER is downloading SRR${ID}
 done
