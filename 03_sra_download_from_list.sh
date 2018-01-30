@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-#$ -N sra_download_04          # name of the job
+#$ -N sra_download_03          # name of the job
 #$ -o /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_03.out   # contains what would normally be printed to std$
 #$ -e /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_03.err   # file name to print standard error messages to.$
 #$ -q free64,som,asom       # request cores from the free64, som, asom queues.
@@ -14,8 +14,8 @@ module load SRAToolKit
 
 # Here we are assigning variables with paths
 DIR=/data/users/$USER/BioinformaticsSG/Getting-Data
-DATA_SRA=${DIR}/sra_data_04
-DATA_FQ=${DIR}/sra_fastq_04
+DATA_SRA=${DIR}/sra_data_03
+DATA_FQ=${DIR}/sra_fastq_03
 
 # Here we are assigning the variable ACC_LIST to the path to our accession list
 ACC_LIST=${DIR}/SRR_Acc_List.txt
