@@ -13,7 +13,7 @@ module load SRAToolKit
 
 # Here we are assigning variables with paths
 DIR=/data/users/$USER/BioinformaticsSG/Getting-Data/
-DATA=${DIR}/data_1
+DATA=${DIR}/data_01
 
 mkdir ${DATA}
 # Here we are changing our current directory to the new file
