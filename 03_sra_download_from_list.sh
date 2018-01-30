@@ -27,6 +27,8 @@ mkdir ${DATA_FQ}
 # Here we are changing our current directory to the DATA directory
 cd ${DATA_SRA}
 
+# Here we want each SRR# to be read (termed ID) and for each ID we will automatically assign PREFIX and BASE. The files will 
+# be downloaded to our $DATA_SRA directory and the fastq file will be deposited in the $DATA_FQ directory
 for ID in $(cat ${ACC_LIST}); do
         PREFIX=`echo ${ID} | head -c 3`
         BASE=`echo ${ID} | head -c 6`
