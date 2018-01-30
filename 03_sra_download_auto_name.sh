@@ -14,20 +14,23 @@ module load SRAToolKit
 
 # Here we are assigning variables with paths
 DIR=/data/users/$USER/BioinformaticsSG/Getting-Data
-DATA=${DIR}/sra_data_04
-DATA2=${DIR}/sra_fastq_04
+DATA_SRA=${DIR}/sra_data_04
+DATA_FQ=${DIR}/sra_fastq_04
+
+# Here we are assigning the variable ACC_LIST to the path to our accession list
+ACC_LIST=${DIR}/SRR_Acc_List.txt
 
 # Here we are making two  new directories, DATA is for our sra data and DATA2 is for the fastq file
-mkdir ${DATA}
-mkdir ${DATA2}
+mkdir ${DATA_SRA}
+mkdir ${DATA_FQ}
 
 # Here we are changing our current directory to the DATA directory
-cd ${DATA}
+cd ${DATA_SRA}
 
-for ID in $(cat ${DIR}/SRR_Acc_List.txt); do
+for ID in $(cat ${ACC_LIST); do
         PREFIX=`echo ${ID} | head -c 3`
         BASE=`echo ${ID} | head -c 6`
         echo $USER is downloading ${ID}
         wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/${PREFIX}/${BASE}/${ID}/${ID}.sra
-        fastq-dump --outdir ${DATA2} -X 5 ${DATA}/${ID}.sra
+        fastq-dump --outdir ${DATA_FQ} -X 5 ${DATA_SRA}/${ID}.sra
 done
