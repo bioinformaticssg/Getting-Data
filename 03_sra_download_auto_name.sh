@@ -1,12 +1,13 @@
+
 #!/bin/bash
 
 #$ -N sra_download_04          # name of the job
-#$ -o /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_03.out   # contains what would normally be printed to stdout (the$
-#$ -e /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_03.err   # file name to print standard error messages to. These m$
+#$ -o /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_03.out   # contains what would normally be printed to std$
+#$ -e /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_03.err   # file name to print standard error messages to.$
 #$ -q free64,som,asom       # request cores from the free64, som, asom queues.
 #$ -pe openmp 8-64          # request parallel environment. You can include a minimum and maximum core count.
 #$ -m beas                  # send you email of job status (b)egin, (e)rror, (a)bort, (s)uspend
-#$ -ckpt blcr               # (c)heckpoint: writes a snapshot of a process to disk, (r)estarts the process after the checkpoint is c$
+#$ -ckpt blcr               # (c)heckpoint: writes a snapshot of a process to disk, (r)estarts the process after the checkpo$
 
 module load blcr
 module load SRAToolKit
@@ -23,7 +24,7 @@ mkdir ${DATA2}
 # Here we are changing our current directory to the DATA directory
 cd ${DATA}
 
-for ID in `seq $(cat SRR_Acc_List.txt); do
+for ID in $(cat ${DIR}/SRR_Acc_List.txt); do
         PREFIX=`echo ${ID} | head -c 3`
         BASE=`echo ${ID} | head -c 6`
         echo $USER is downloading ${ID}
