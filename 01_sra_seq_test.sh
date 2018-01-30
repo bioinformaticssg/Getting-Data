@@ -19,6 +19,7 @@ mkdir ${DATA}
 # Here we are changing our current directory to the new file
 cd ${DATA}
 
+# This script cycles through a range of numbers and attaches the prefix 'SRR' to each
 nstart_seq="3744659"
 nstop_seq="3744667"
 
