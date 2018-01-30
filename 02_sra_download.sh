@@ -1,9 +1,9 @@
 
 #!/bin/bash
 
-#$ -N sra_download          # name of the job
-#$ -o /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download.out   # contains what would normally be printed to stdout (the$
-#$ -e /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download.err   # file name to print standard error messages to. These m$
+#$ -N sra_download_02          # name of the job
+#$ -o /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_02.out   # contains what would normally be printed to stdout (the$
+#$ -e /data/users/$USER/BioinformaticsSG/Getting-Data/sra_download_02.err   # file name to print standard error messages to. These m$
 #$ -q free64,som,asom       # request cores from the free64, som, asom queues.
 #$ -pe openmp 8-64          # request parallel environment. You can include a minimum and maximum core count.
 #$ -m beas                  # send you email of job status (b)egin, (e)rror, (a)bort, (s)uspend
