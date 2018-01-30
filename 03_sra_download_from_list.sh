@@ -27,7 +27,7 @@ mkdir ${DATA_FQ}
 # Here we are changing our current directory to the DATA directory
 cd ${DATA_SRA}
 
-for ID in $(cat ${ACC_LIST); do
+for ID in $(cat ${ACC_LIST}); do
         PREFIX=`echo ${ID} | head -c 3`
         BASE=`echo ${ID} | head -c 6`
         echo $USER is downloading ${ID}
