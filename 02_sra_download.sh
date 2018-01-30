@@ -17,13 +17,15 @@ DIR=/data/users/$USER/BioinformaticsSG/Getting-Data
 DATA_SRA=${DIR}/sra_data_02
 DATA_FQ=${DIR}/sra_fastq_02
 
-# Here we are making two  new directories, DATA is for our sra data and DATA2 is for the fastq file
+# Here we are making two new directories, DATA_SRA is for our sra data and DATA_FQ is for the fastq file
 mkdir ${DATA_SRA}
 mkdir ${DATA_FQ}
 
 # Here we are changing our current directory to the DATA directory
 cd ${DATA_SRA}
 
+# Here you have to manually write out the PREFIX (first three characters of experiment names), BASE (first six characters), and the 
+# range of numbers after the BASE
 PREFIX="SRR"
 BASE="SRR374" 
 nstart_seq="4667"
